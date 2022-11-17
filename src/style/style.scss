@@ -1,0 +1,97 @@
+.main {
+    width: 720px;
+    background-image: url(./img/workplace.jpg);
+    background-position: center top;
+}
+
+.container {
+    width: 650px;
+    background: $back;
+    background: $back-a;
+    padding: 35px;
+    display: inline-flex;
+}
+  
+.form {
+    transform: skew(-35deg);
+    color: $text;
+    display: inline-flex;
+}
+
+.form_input {
+     padding: 15px;
+    font-size: medium;
+    width: 380px;
+    background-color: $back-input;
+    border: solid 2px $border-input;
+}
+
+.form_btm {
+    background-color: $back-btm;
+    color: $text-btm;
+    border: solid 2px $border-input;
+    padding: 15px;
+    width: 234px;
+    height: auto;
+}
+
+input::placeholder {
+    transform: skew(35deg);
+    color: $text-input;
+}
+
+input:invalid { /*валидация формы */
+    border-color: $back-btm; /* поле не заполнено */
+} 
+
+input:valid { /* поле заполнено */
+    border-color: $border-valid;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: $back-btm;
+}
+
+input:valid:not(:placeholder-shown) {
+    border-color: $border-valid;
+}
+  
+.form_btm b {
+    transform: skew(35deg);
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none;
+}
+  
+  @media all and (max-width: 500px){ /* Вид формы на мобильных устройствах */
+    .main {
+        width: 450px;
+    }
+
+    .container{
+        width: 380px;
+    }
+
+    .form {
+      transform: none;
+    }
+
+    input::placeholder {
+    transform: none;
+    }
+
+  .form_btm b{
+    transform: none;
+    }
+
+    .form_input{
+      width: 190px;
+  }
+
+    .form_btm {
+      width: 117px;
+    }
+}
