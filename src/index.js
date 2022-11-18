@@ -1,5 +1,6 @@
 import './index.html';
 import './index.scss';
+import './font-awesome/css/font-awesome.css';
 
 const Button = document.getElementById('form_btm');
 const input = document.getElementById('form_input');
@@ -8,7 +9,7 @@ Button.addEventListener('click', sendNum)
 
 async function sendNum(e) {
     e.preventDefault();
-    if (!input.value) return;
+    if (!input.value.trim()) return;
 
  const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
